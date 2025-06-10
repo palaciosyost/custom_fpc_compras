@@ -9,6 +9,7 @@ class ComprasState(models.Model):
         selection_add=[
             ('parcial', 'Recepción Parcial'),
             ('recepcionado', 'Recepcionado'),
+            ('devuelto', 'Devuelto'),  # opcional
         ]
     )
 
@@ -35,6 +36,9 @@ class ComprasState(models.Model):
                 elif picking.state == 'cancel':
                     cancelled_count += 1
 
+            # Lógica corregida fuera del bucle
+            if cancelled_count == len(pickings):
+                order.state = 'devuelto'
             elif done_count == len(pickings):
                 order.state = 'recepcionado'
             elif done_count > 0 or partial:
