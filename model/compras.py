@@ -47,6 +47,27 @@ class ComprasState(models.Model):
                 order.state = 'pendiente'
 
 
+
+    def open_wizard_descuento (self):
+        return {
+            "type": "ir.actions.act_window",
+            "name": "Descuento Global",
+            "res_model": "wizard.descuento.compras",
+            "view_mode": "form",
+            "target": "new",
+            "context": {
+                "default_compra_id": self.id,
+            },
+        }
+
+
+
+
+
+
+
+
+
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 

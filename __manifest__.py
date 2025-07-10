@@ -8,6 +8,11 @@
     'depends': [
         'base', "stock", "purchase"
     ],
+    "data" : [
+        "security/ir.model.access.csv",
+        "view/inherit_form_compras.xml",
+        "wizard/wizard_compras_descuento.xml",
+    ],
     'auto_install': False,
     'application': True,
 }
