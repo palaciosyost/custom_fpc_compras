@@ -10,8 +10,8 @@
     ],
     "data" : [
         "security/ir.model.access.csv",
-        "view/inherit_form_compras.xml",
         "wizard/wizard_compras_descuento.xml",
+        "view/inherit_form_compras.xml",
     ],
     'auto_install': False,
     'application': True,

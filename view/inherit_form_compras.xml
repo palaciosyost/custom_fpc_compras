@@ -7,8 +7,8 @@
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
               <xpath expr="//field[@name='tax_totals']" position="before">
-                <button name="%(action_open_wizard_descuento)d"
-                        type="action"
+                <button name="open_wizard_descuento"
+                        type="object"
                         string="Descuento Global"
                         class="oe_highlight"/>
               </xpath>
