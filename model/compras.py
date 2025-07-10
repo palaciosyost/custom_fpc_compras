@@ -48,22 +48,18 @@ class ComprasState(models.Model):
 
 
 
-    def open_wizard_descuento (self):
+    def open_wizard_descuento(self):
+        self.ensure_one()
         return {
-            "type": "ir.actions.act_window",
-            "name": "Descuento Global",
-            "res_model": "wizard.descuento.compras",
-            "view_mode": "form",
-            "target": "new",
-            "context": {
-                "default_compra_id": self.id,
+            'name': 'Aplicar Descuento',
+            'type': 'ir.actions.act_window',
+            'res_model': 'wizard.descuento.compras',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_compra_id': self.id,
             },
         }
-
-
-
-
-
 
 
 
