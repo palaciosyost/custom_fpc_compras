@@ -57,7 +57,7 @@ class ComprasState(models.Model):
             'view_mode': 'form',
             'target': 'new',
             'context': {
-                'default_compra_id': self.id,
+                'compra_id': self.id,
             },
         }
 
